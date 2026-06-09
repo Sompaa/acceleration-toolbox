@@ -36,7 +36,7 @@ jobs:
       - name: Upload MultiQC report
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 01_GitHub/results/multiqc_out
+          path: 01_GitHub/results/multiqc_report
 
   deploy:
     needs: run-pipeline
