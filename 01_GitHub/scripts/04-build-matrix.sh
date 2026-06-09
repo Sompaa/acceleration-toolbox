@@ -9,7 +9,7 @@ echo "Counting matches into summary matrix"
 
 # GROUP 4 - WRITE HERE THE COMMAND TO RUN THE PYTHON SCRIPT THAT BUILDS THE SUMMARY MATRIX
 # THE PYTHON SCRIPT TAKES THE RESULTS AND OUTPUT DIRECTORIES AS A PARAMETERS
-
+python 01_GitHub/scripts/build_matrix.py "$RESULTS_DIR" "$OUTPUT_DIR"
 
 # check if the matrix file was created successfully
 if [ ! -f "$OUTPUT_DIR/matches_summary.csv" ]; then
