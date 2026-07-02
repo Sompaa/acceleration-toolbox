@@ -193,7 +193,7 @@ Nextflow needs to know exactly what kind of data is flowing into and out of your
 ### Part 3: Group Assignment
 > *Your task is to convert hollow ```.nf``` templates into functional modules using your optimized container commands.*
 
-The Assignments
+**The Assignments**
 - Group 1: Quality Control | Complete ```fastqc.nf```
 - Group 2: Read Trimming | Complete ```trimming.nf```
 - Group 3: Quantification | Complete ```salmon.nf``` (*only quantification*)
@@ -201,8 +201,16 @@ The Assignments
 
 > All of these processes rely on the containers built and pushed to [DockerHub](https://hub.docker.com/repository/docker/hcemm/bioinfo-workshop) in the previous part.
 
+**Submission Protocol**
+Once the processes are updated, please:
+- Commit to your group branch: ```git commit -m "some message + group name"```
+- Push to [```HCEMM/rnaseq-nextflow```](https://github.com/HCEMM/rnaseq-nextflow) repository
+- Check Github Actions (CICD) syntax and Nextflow tests (```nf-test```)
+- When all checks are passed, open a Pull Request (PR) to ```developer``` branch!
 
+image
 
+> Once all groups have created a PR, a whole pipeline test will be performed! ✅
 ### Step 4: Version Control and CI/CD
 Once your group has a working process, it is time to integrate it into the main pipeline. We will follow standard, real-world software development practices.
 
