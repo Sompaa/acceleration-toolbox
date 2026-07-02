@@ -249,3 +249,8 @@ Let's open our results/ folder and inspect our final outputs:
 ----------------
 
 **Congratulations! You have successfully built, containerized, and automated a collaborative bioinformatics workflow!**
+
+------------------
+|Previous|Home|Next|
+|--------|----|----|
+|[Workflow Managers](../03_Workflow_Managers/README.md)|[Home](../README.md)|[Conda](../05_nf-test/README.md)
