@@ -8,6 +8,7 @@
 - ⚡ CI/CD with GitHub Actions
 - 🔄 Nextflow workflows
 - 🧬 nf-core pipelines
+- changed
 
 ### Workshop Roadmap
 1. Introduction
@@ -47,3 +48,10 @@
 -------------------
 
 _From manual scripts → reproducible bioinformatics pipelines._
+
+
+
+
+
+
+
