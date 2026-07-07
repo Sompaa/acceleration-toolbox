@@ -534,7 +534,7 @@ remote downloads during build
 
 4. Create a file, and print it from inside the container
 
-5. Build an image from a Dockerfile, and run it to explore its contents
+5. Build an image from a Dockerfile, compiling Bowtie2 from source, and run it to explore its contents
 
 6. Run the same image, but see a file from your own system
 
