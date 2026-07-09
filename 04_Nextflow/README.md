@@ -192,7 +192,9 @@ Driven by the ```publishDir``` directive, this is where your clean, final data l
 
 First, copy the files from /common
 ```
-cp -r /common/2nd_workshop/data /scratch/your_group
+cd /scratch/group_name
+git clone https://github.com/HCEMM/rnaseq-nextflow
+cp -r /common/2nd_workshop/data/* /scratch/group_name/username/rnaseq-nextflow/data
 ```
 Then, run the pipeline with the following command:
 ```
