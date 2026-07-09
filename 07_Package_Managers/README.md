@@ -301,3 +301,173 @@ pip install -r requirements.txt
 # NextFlow with Conda
 
 The pipeline has already been configured to use Conda environments. Run as `nextflow run main.nf -profile slurm,conda`.
+
+## Exercises
+
+# Exercises — Conda Environments and Package Management
+
+These exercises will help you practice creating, managing, exporting, and integrating Conda environments in bioinformatics workflows.
+
+---
+
+## Exercise 1 — Create your first environment
+
+Create an environment called `seqkit_env` containing:
+
+- Python 3.12
+- SeqKit
+
+### Questions
+
+1. How do you activate the environment?
+2. Which version of SeqKit was installed?
+3. Which channel did it come from?
+
+---
+
+## Exercise 2 — Install more software
+
+Add the following packages to the same environment:
+
+- FastQC
+- MultiQC
+
+### Questions
+
+1. Which package manager resolved the dependencies?
+2. Approximately how many packages were installed?
+
+---
+
+## Exercise 3 — Search before installing
+
+Without installing anything:
+
+1. Find the latest available version of Salmon.
+2. Find every available version of Trimmomatic.
+3. Check whether STAR is available on Bioconda.
+
+### Questions
+
+- Which commands allow you to search packages before installation?
+- Why is searching before installing useful?
+
+---
+
+## Exercise 4 — Build an environment in one command
+
+Create a new environment called `rnaseq` containing:
+
+- FastQC
+- Trimmomatic
+- Salmon
+- MultiQC
+
+### Questions
+
+1. How many packages were installed?
+2. Which package took the longest to solve?
+
+---
+
+## Exercise 5 — Export and recreate an environment
+
+Export your environment:
+
+```bash
+conda env export > rnaseq.yml
+```
+
+## Exercise 6 — Create an environment from scratch
+
+Create a file called `rnaseq.yml`:
+
+```yaml
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - fastqc=0.12.1
+  - multiqc
+  - salmon
+```
+
+Create the environment:
+
+conda env create -n rnaseq -f rnaseq.yml
+
+### Questions
+1. Which command recreates the environment from the YAML file?
+2. How would you share this environment with a collaborator?
+3. Why is an environment file preferable to manually listing installation commands?
+
+## Exercise 7 — R and Bioconductor packages
+
+Create an environment containing:
+```
+R
+limma
+edgeR
+tximport
+```
+
+Questions
+1. Which package names are used in Conda?
+2. Do you need to run BiocManager::install() inside R?
+3. How would you verify that the packages are correctly installed?
+
+This exercise reinforces that Conda can manage many Bioconductor packages directly, making computational environments easier to reproduce.
+
+## Exercise 8 — Use pip inside Conda
+
+Create an environment containing:
+
+Python
+pandas (installed through Conda)
+
+Then install:
+```
+pip install rich-click
+```
+### Questions
+
+1. Which package came from Conda?
+2. Which package came from pip?
+3. How can you check where each package was installed from?
+4. Why is installing with Conda first generally recommended?
+
+## Exercise 9 — Customize .condarc
+
+Create a .condarc file containing:
+```
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+channel_priority: strict
+```
+### Questions
+1. What is the effect of channel_priority: strict?
+2. Why is conda-forge listed before bioconda?
+3. How can you check your current Conda configuration?
+
+## Exercise 10 — Nextflow integration
+
+Given the following Nextflow process:
+```
+process FASTQC {
+
+    conda = "$projectDir/envs/fastqc.yml"
+
+    ...
+}
+```
+Tasks
+1. Create the fastqc.yml environment file.
+2. Modify it to install FastQC version 0.12.1.
+3. Add MultiQC to the environment.
+4. Explain why using a YAML file is preferable to writing:
+   conda = "bioconda::fastqc"
